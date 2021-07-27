@@ -68,8 +68,14 @@ const Meta = props => (
     />
     <meta name="twitter:site" content="Stacksense" />
     <meta name="twitter:creator" content="@swarup4741" />
-    <meta property="og:image" content="" />
-    <meta name="twitter:image" content="/favicons/twitter-image.png" />
+    <meta
+      property="og:image"
+      content="https://stackense.vercel.app/favicons/twitter-image.png"
+    />
+    <meta
+      name="twitter:image"
+      content="https://stackense.vercel.app/favicons/twitter-image.png"
+    />
 
     <meta name="msapplication-config" content="/browserconfig.xml" />
     <meta name="msapplication-square70x70logo" content="/mstile-70x70.png" />
