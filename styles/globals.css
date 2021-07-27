@@ -1,16 +1,42 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+@tailwind base;
+
+.form-btn {
+    @apply w-full text-center py-2 bg-indigo disabled:opacity-50 active:bg-indigo-active text-white hover:bg-indigo-active rounded-md focus:outline-none;
+}
+.form-head {
+    @apply text-2xl font-bold flex flex-col items-center mb-4;
+}
+.text-overflow {
+    @apply overflow-hidden whitespace-nowrap overflow-ellipsis;
+}
+.menu-links {
+    @apply text-lg text-indigo border-t border-b bg-dashbg border-indigo-darker hover:bg-black w-full pl-8 py-3 cursor-pointer;
+}
+.file-data-card {
+    @apply text-indigo-light px-8 py-2 bg-dashbg rounded-md ring-0 ring-offset-indigo ring-offset-1;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: "Product Sans";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("/fonts/ProductSans-Regular.woff2") format("woff2");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+        U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212,
+        U+2215, U+FEFF, U+FFFD;
 }
 
-* {
-  box-sizing: border-box;
+@font-face {
+    font-family: "Product Sans";
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url("/fonts/ProductSans-Bold.woff2") format("woff2");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+        U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212,
+        U+2215, U+FEFF, U+FFFD;
 }
