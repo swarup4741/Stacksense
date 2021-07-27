@@ -70,11 +70,11 @@ const Meta = props => (
     <meta name="twitter:creator" content="@swarup4741" />
     <meta
       property="og:image"
-      content="https://stackense.vercel.app/favicons/twitter-image.png"
+      content="https://stacksense.vercel.app/favicons/twitter-image.png"
     />
     <meta
       name="twitter:image"
-      content="https://stackense.vercel.app/favicons/twitter-image.png"
+      content="https://stacksense.vercel.app/favicons/twitter-image.png"
     />
 
     <meta name="msapplication-config" content="/browserconfig.xml" />
