@@ -1,6 +1,6 @@
-import Head from 'next/head';
+import Head from "next/head";
 
-const Meta = (props) => (
+const Meta = props => (
   <Head>
     <link
       href="/fonts/ProductSans-Regular.woff2"
@@ -59,7 +59,7 @@ const Meta = (props) => (
       content="Store your essential documents, pictures and other things so that you never forget them"
     />
     <meta property="og:site_name" content="Stacksense" />
-    <meta property="og:url" content="" />
+    <meta property="og:url" content="https://stacksense.vercel.app" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Stacksense" />
     <meta
@@ -68,8 +68,8 @@ const Meta = (props) => (
     />
     <meta name="twitter:site" content="Stacksense" />
     <meta name="twitter:creator" content="@swarup4741" />
-    {/* <meta property="og:image" content="" />
-    <meta name="twitter:image" content="" /> */}
+    <meta property="og:image" content="" />
+    <meta name="twitter:image" content="/favicons/twitter-image.png" />
 
     <meta name="msapplication-config" content="/browserconfig.xml" />
     <meta name="msapplication-square70x70logo" content="/mstile-70x70.png" />
