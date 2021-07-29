@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
-import { AnimatePresence } from 'framer-motion';
+import { AnimatePresence } from "framer-motion";
 
-import { useToast } from '@chakra-ui/toast';
+import { useToast } from "@chakra-ui/toast";
 
-import useCount from '../hooks/useCount';
-import useFirestore from '../hooks/useFirestore';
-import { file_types } from '../utils/filetypes';
-import Progress from './Progress';
+import useCount from "../hooks/useCount";
+import useFirestore from "../hooks/useFirestore";
+import { file_types } from "../utils/filetypes";
+import Progress from "./Progress";
 
 const UploadForm = ({ userId }) => {
   const [file, setFile] = useState(null);
@@ -15,17 +15,17 @@ const UploadForm = ({ userId }) => {
   const { docs } = useFirestore(userId);
   const { size } = useCount(userId);
 
-  const handleChange = (e) => {
+  const handleChange = e => {
     let selected = e.target.files[0];
 
     if (selected) {
-      if (docs.filter((doc) => doc.filename === selected.name).length) {
+      if (docs.filter(doc => doc.filename === selected.name).length) {
         toast({
-          title: 'File already present',
+          title: "File already present",
           description: `${selected.name} is already present in your drive. Give it a search.`,
-          status: 'warning',
+          status: "warning",
           duration: 9000,
-          isClosable: true,
+          isClosable: true
         });
         setFile(null);
         return;
@@ -39,33 +39,33 @@ const UploadForm = ({ userId }) => {
           setFile(selected);
         } else {
           toast({
-            title: 'File upload interrupted !',
+            title: "File upload interrupted !",
             description:
-              'Oops! Looks like your Storage is full. you can delete some of your unneccessary files to make some space',
-            status: 'error',
+              "Oops! Looks like your Storage is full. you can delete some of your unneccessary files to make some space",
+            status: "error",
             duration: 12000,
-            isClosable: true,
+            isClosable: true
           });
           setFile(null);
           return;
         }
       } else {
         toast({
-          title: 'File upload interrupted !',
+          title: "File upload interrupted !",
           description:
-            'Either file size was greater than 10MB (Allowed size is less than 10MB) or Invalid file type (Allowed types : png,jpg,jpeg,pdf,docx,xls)',
+            "Either file size was greater than 10MB (Allowed size is less than 10MB) or Invalid file type (Allowed types : png,jpg,jpeg,pdf,docx,xls)",
           duration: 12000,
           isClosable: true,
-          status: 'error',
+          status: "error"
         });
         setFile(null);
       }
     } else {
       toast({
-        title: 'No file was selected',
-        status: 'warning',
+        title: "No file was selected",
+        status: "warning",
         duration: 6000,
-        isClosable: true,
+        isClosable: true
       });
     }
   };
@@ -76,7 +76,7 @@ const UploadForm = ({ userId }) => {
         <label>
           <input className="sr-only" type="file" onChange={handleChange} />
           <div className="flex gap-2 items-center px-4 py-2 ring-1 ring-indigo-dark bg-gradient-to-tr from-dashbg via-cardbg to-indigo-darker cursor-pointer rounded-md">
-            <img src="/assets/upload.svg" />
+            <img src="/assets/upload.svg" alt="File upload button" />
             <p>Upload</p>
           </div>
         </label>

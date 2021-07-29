@@ -1,10 +1,10 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 
-import Link from 'next/link';
-import { useRouter } from 'next/router';
+import Link from "next/link";
+import { useRouter } from "next/router";
 
-import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
-import { Input, InputGroup, InputRightElement } from '@chakra-ui/input';
+import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
+import { Input, InputGroup, InputRightElement } from "@chakra-ui/input";
 import {
   Button,
   FormControl,
@@ -15,21 +15,21 @@ import {
   ModalFooter,
   ModalHeader,
   ModalOverlay,
-  useDisclosure,
-} from '@chakra-ui/react';
+  useDisclosure
+} from "@chakra-ui/react";
 
-import { Header } from '../components/Header';
-import Meta from '../partials/meta';
-import { useAuth } from '../lib/auth';
+import { Header } from "../components/Header";
+import Meta from "../partials/meta";
+import { useAuth } from "../lib/auth";
 
 const signin = () => {
   const auth = useAuth();
   const router = useRouter();
   const { isOpen, onOpen, onClose } = useDisclosure();
 
-  const [email, setEmail] = useState('');
-  const [pass, setPass] = useState('');
-  const [resetEmail, setResetEmail] = useState('');
+  const [email, setEmail] = useState("");
+  const [pass, setPass] = useState("");
+  const [resetEmail, setResetEmail] = useState("");
 
   const [show, setShow] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -48,7 +48,7 @@ const signin = () => {
       <div className="min-h-screen w-screen absolute top-0 bg-black flex justify-center items-center">
         <div className="max-w-sm px-6 py-8 mt-8">
           <form
-            onSubmit={async (e) => {
+            onSubmit={async e => {
               e.preventDefault();
               setLoading(true);
               const USER = await auth.signin(email, pass);
@@ -60,7 +60,11 @@ const signin = () => {
               Welcome back to
               <Link href="/">
                 <span className="flex text-indigo-light mt-1 items-center cursor-pointer">
-                  <img src="/assets/logo.svg" className="h-8 mr-1" />
+                  <img
+                    src="/assets/logo.svg"
+                    className="h-8 mr-1"
+                    alt="stacksense logo"
+                  />
                   Stacksense
                 </span>
               </Link>
@@ -74,18 +78,18 @@ const signin = () => {
               color="#AA8BFF"
               isRequired
               autoComplete="off"
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={e => setEmail(e.target.value)}
             />
             <InputGroup>
               <Input
-                type={show ? 'text' : 'password'}
+                type={show ? "text" : "password"}
                 autoComplete="off"
                 placeholder="Enter your password..."
                 focusBorderColor="purple.400"
                 color="#AA8BFF"
                 isRequired
                 autoComplete="off"
-                onChange={(e) => setPass(e.target.value)}
+                onChange={e => setPass(e.target.value)}
               />
               <InputRightElement cursor="pointer">
                 {show ? (
@@ -107,9 +111,9 @@ const signin = () => {
               bg="rgba(116, 66, 255)"
               w="full"
               fontWeight="semibold"
-              _focus={{ outline: 'none' }}
-              _hover={{ bg: 'rgba(85, 48, 190)' }}
-              _active={{ bg: 'rgba(85, 48, 190)' }}
+              _focus={{ outline: "none" }}
+              _hover={{ bg: "rgba(85, 48, 190)" }}
+              _active={{ bg: "rgba(85, 48, 190)" }}
               isLoading={loading}
               loadingText="Signing in..."
               type="submit"
@@ -123,7 +127,7 @@ const signin = () => {
               Forgot your password ?
             </a>
             <p className="text-center">
-              Need an account?{' '}
+              Need an account?{" "}
               <Link href="/signup">
                 <a className="text-indigo-light pl-1 hover:underline">
                   Sign up
@@ -136,9 +140,9 @@ const signin = () => {
             <ModalOverlay />
             <ModalContent bg="#0B0B1F" mx={4} boxShadow="dark-lg">
               <ModalHeader>Email for Password Reset</ModalHeader>
-              <ModalCloseButton _focus={{ outline: 'none' }} />
+              <ModalCloseButton _focus={{ outline: "none" }} />
               <form
-                onSubmit={(e) => {
+                onSubmit={e => {
                   e.preventDefault();
                   auth.sendPasswordResetEmail(resetEmail);
                   onClose();
@@ -149,7 +153,7 @@ const signin = () => {
                     <Input
                       placeholder="your email id"
                       type="email"
-                      onChange={(e) => setResetEmail(e.target.value)}
+                      onChange={e => setResetEmail(e.target.value)}
                     />
                   </FormControl>
                 </ModalBody>
@@ -160,17 +164,17 @@ const signin = () => {
                     color="white"
                     mr={3}
                     bg="rgba(116, 66, 255)"
-                    _focusWithin={{ outline: 'none' }}
+                    _focusWithin={{ outline: "none" }}
                   >
                     Reset Password
                   </Button>
                   <Button
-                    _hover={{ bg: 'red' }}
+                    _hover={{ bg: "red" }}
                     _focusWithin={{
-                      outline: 'none',
-                      ring: 'none',
+                      outline: "none",
+                      ring: "none"
                     }}
-                    _active={{ bg: 'red.400' }}
+                    _active={{ bg: "red.400" }}
                     onClick={onClose}
                   >
                     Cancel

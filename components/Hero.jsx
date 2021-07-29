@@ -1,5 +1,5 @@
-import Image from 'next/image';
-import Link from 'next/link';
+import Image from "next/image";
+import Link from "next/link";
 
 export const Hero = () => {
   return (
@@ -22,7 +22,12 @@ export const Hero = () => {
         </Link>
       </section>
 
-      <Image src="/assets/hero.svg" height={437} width={476} />
+      <Image
+        src="/assets/hero.svg"
+        height={437}
+        width={476}
+        alt="Hero section image of Lady putting files inside folder"
+      />
     </div>
   );
 };

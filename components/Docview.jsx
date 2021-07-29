@@ -88,6 +88,7 @@ export const Docview = ({ doc }) => {
           objectPosition="center"
           layout="fill"
           placeholder="blur"
+          alt={`${doc.filetype} file`}
         />
       </div>
 

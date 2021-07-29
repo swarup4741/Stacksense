@@ -60,6 +60,10 @@ const Meta = props => (
     />
     <meta property="og:site_name" content="Stacksense" />
     <meta property="og:url" content="https://stacksense.vercel.app" />
+    <meta
+      property="og:image"
+      content="https://stacksense.vercel.app/favicons/twitter-image.png"
+    />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Stacksense" />
     <meta
@@ -68,10 +72,6 @@ const Meta = props => (
     />
     <meta name="twitter:site" content="Stacksense" />
     <meta name="twitter:creator" content="@swarup4741" />
-    <meta
-      property="og:image"
-      content="https://stacksense.vercel.app/favicons/twitter-image.png"
-    />
     <meta
       name="twitter:image"
       content="https://stacksense.vercel.app/favicons/twitter-image.png"
